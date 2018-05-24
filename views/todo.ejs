@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ma todolist</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+
+        <style>
+            a {text-decoration: none; color: black;}
+            #todo-list {
+                margin-top : 20px;
+            }
+            #todo-list .todo-item .btn-delete {
+                cursor : pointer
+            }
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+        <h1>Ma todolist</h1>
+        <div class="input-group" id="todo-form">
+            <input type="text" class="form-control"name="newtodo" id="newtodo" placeholder="Que dois-je faire ?">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="submit">Ajouter</button>
+            </span>
+        </div>
+
+        <ul id="todo-list" class="list-group"></ul>
+    </div>
+
+        <script src="./js/jquery-3.2.1.slim.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('<%= protocole %>://<%= host %>:<%= port %>/');
+        </script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
